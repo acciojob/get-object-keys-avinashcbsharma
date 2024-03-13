@@ -1,7 +1,13 @@
-function getKeys(obj) {
-    return Object.keys(obj);
-  }
-  
-  // Example usage
-  const student = { name: "John", age: 20, grade: "A" };
-  console.log(getKeys(student)); 
+let student = {
+    name:"XYZ"
+}
+
+student.prototype.getKeys = function() {
+    const keys = [];
+    for (const key in this) {
+        if (this.hasOwnProperty(key)) {
+            keys.push(key);
+        }
+    }
+    return keys;
+};
